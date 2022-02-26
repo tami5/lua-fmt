@@ -1,17 +1,19 @@
 {
   inputs.nixlua.url = "path:///Users/tami5/repos/nix/nixlua";
   outputs = { self, nixlua }:
-    nixlua.mkOutputs (pkgs:
-      with pkgs; rec {
-        pname = "fmt";
-        defaultVersion = "lua5_4";
-        version = "master";
+    let
+      pname = "fmt";
+      defaultVersion = "lua5_1";
+      version = "master";
+    in nixlua.mkOutputs rec {
+      inherit self pname defaultVersion version;
+      config = pkgs: {
         build = lua: prev: {
           src = ./.;
           buildInputs = [ ];
           nativeBuildInputs = [ ];
           propagatedBuildInputs = [ ];
-          buildPhase = with stdenv;
+          buildPhase = with pkgs.stdenv;
             if isDarwin then
               "$CC -o fmt.so -O3 -fPIC -shared -undefined dynamic_lookup lfmt.c"
             else
@@ -21,11 +23,7 @@
             mkdir -p $TARGET
             cp ${pname}.so $TARGET
           '';
-          # FIXME
-          # checkPhase = ''
-          #   # ${lua.bin} -e 'print(require"${pname}"("{}", "hello"))'
-          # '';
-          # doCheck = true;
+          doCheck = false;
         };
         shell = {
           luaEnv = lua:
@@ -39,5 +37,6 @@
           commands = [ ];
           env = [ ];
         };
-      });
+      };
+    };
 }

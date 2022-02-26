@@ -42,7 +42,7 @@
         "utils": "utils"
       },
       "locked": {
-        "narHash": "sha256-YGPrf6nG1+KW3XxOcYhmq7E2APKpWFPla5U7n4MHa4Y=",
+        "narHash": "sha256-xtydC7fLqwTcvRAX70IIASC2/q7OdpPUOzFwu7NhZb0=",
         "path": "/Users/tami5/repos/nix/nixlua",
         "type": "path"
       },
