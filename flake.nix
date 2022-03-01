@@ -1,5 +1,5 @@
 {
-  inputs.nixlua.url = "path:///Users/tami5/repos/nix/nixlua";
+  inputs.nixlua.url = "github:tami5/nixlua";
   outputs = { self, nixlua }:
     let
       pname = "fmt";

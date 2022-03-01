@@ -42,13 +42,17 @@
         "utils": "utils"
       },
       "locked": {
-        "narHash": "sha256-xtydC7fLqwTcvRAX70IIASC2/q7OdpPUOzFwu7NhZb0=",
-        "path": "/Users/tami5/repos/nix/nixlua",
-        "type": "path"
+        "lastModified": 1645872928,
+        "narHash": "sha256-oJwr7rPcJqfpPYtZSpz4Qc6yBMUJrTJZeanRDGDyVnk=",
+        "owner": "tami5",
+        "repo": "nixlua",
+        "rev": "1ce15f4d0b8e616eff29d6e705ed5171f483a5d2",
+        "type": "github"
       },
       "original": {
-        "path": "/Users/tami5/repos/nix/nixlua",
-        "type": "path"
+        "owner": "tami5",
+        "repo": "nixlua",
+        "type": "github"
       }
     },
     "nixpkgs": {
